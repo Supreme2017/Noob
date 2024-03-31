@@ -34,8 +34,17 @@ client.on ('messageCreate',(message)=>{
         message.reply("https://media.tenor.com/Va1kCZB5Ot4AAAAM/cop-police.gif");
     };
 
-
 })
+
+// welcome command
+const welcomeChannelID="1210955522421817385"
+const guildID="1189591582375166114"
+client.on('guildMemberAdd', member => {
+  if (member.guild.id !== guildID) return;
+  const channel = member.guild.channels.cache.get(welcomeChannelID);
+  if (!channel) return;
+  channel.send(`Welcome to the Supreme Family, ${member}!`);
+});
 
 
 //slash commands
@@ -52,10 +61,7 @@ client.on('interactionCreate', (interaction) => {
     interaction.reply(`🏓 Pong! ${client.ws.ping}ms`);
     }     
 
-
-
-
-
+    // warn command 
     const {ownerid} = require("../config.json")  ; 
     const reason = "has been warned for the reason:" 
 
@@ -63,7 +69,7 @@ client.on('interactionCreate', (interaction) => {
       if (!interaction.isCommand()) return;
     
       if (interaction.commandName === 'warn') {
-        const input = interaction.options.getString('member');
+        const input = interaction.options.getUser('member');
         const reasonn = interaction.options.getString('reason');
     
         if (!input) {
