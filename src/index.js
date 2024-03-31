@@ -34,10 +34,7 @@ client.on ('messageCreate',(message)=>{
         message.reply("https://media.tenor.com/Va1kCZB5Ot4AAAAM/cop-police.gif");
     };
 
-    //Name trigger
-    if (contentLowercase.includes("supreme")) {
-        message.react("❤");
-    }
+
 })
 
 
