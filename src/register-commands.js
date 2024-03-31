@@ -12,8 +12,8 @@ const commands = [
         options:[
             {
                 name: 'member',
-                description: 'The input to repeat.',
-                type: ApplicationCommandOptionType.String,
+                description: 'the member you want to warn',
+                type: ApplicationCommandOptionType.User,
                 required: true
             },
             {
