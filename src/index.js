@@ -24,10 +24,15 @@ client.on('ready', () => {
     })
   })
   
+  const contentLowercase = message.content.toLowerCase();
+  //Asim Uncle
+   if (contentLowercase.includes("asim muneer")||contentLowercase.includes("army")||contentLowercase.includes("asim munir")) {
+      message.reply("https://media.tenor.com/Va1kCZB5Ot4AAAAM/cop-police.gif");
+  };
 
 
   // Links delete
-  const exemptRoleIDs = ['1212820572724264990', '1223748824699244644', '1210943307111211038','1212431099028971555','1223429887839309844','1190374142403416074','1219633686908239932'];
+  const exemptRoleIDs = ['1212820572724264990', '1223748824699244644', '1210943307111211038','1212431099028971555','1223429887839309844','1190374142403416074','1219633686908239932', '1210962834029158460'];
   const allowedChannelID = '1210955522421817385';
   client.on('messageCreate', message => {
 
